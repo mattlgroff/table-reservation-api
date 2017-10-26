@@ -22,11 +22,11 @@ app.get("/reserve", (req, res) => {
 });
 
 app.get("/api/waitlist", (req, res) => {
-  res.json(waitlist);
+  res.json(api.waitlist);
 });
 
 app.get("/api/tables", (req, res) => {
-  res.json(tables);
+  res.json(api.tables);
 });
 
 app.post("/api/clear", (req, res) => {
