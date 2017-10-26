@@ -4,7 +4,7 @@ const path = require("path");
 
 const amountOfTables = 5;
 const app = express();
-const PORT = 8080;
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
