@@ -1,7 +1,6 @@
 {
   "name": "tablereservation",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -13,5 +12,14 @@
     "start": "node app.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattlgroff/table-reservation-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mattlgroff/table-reservation-api/issues"
+  },
+  "homepage": "https://github.com/mattlgroff/table-reservation-api#readme",
+  "description": ""
 }
