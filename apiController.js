@@ -20,7 +20,7 @@ module.exports = {
   clear: function() {
 
     if (this.waitlist.length > this.amountOfTables){
-      this.tables = this.waitlist.slice(0, (this.amountOfTables - 1) );
+      this.tables = this.waitlist.slice(0, (this.amountOfTables) );
       this.waitlist = this.waitlist.splice(this.amountOfTables); 
     }
     else {
