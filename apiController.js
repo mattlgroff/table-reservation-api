@@ -18,19 +18,10 @@ module.exports = {
     console.log(newReservation);
   },
   clear: function() {
-    let temp = [];
-    let temp2 = [];
 
     if (this.waitlist.length > this.amountOfTables){
-      for (let i =0; i < this.amountOfTables; i++){
-        temp.push(this.waitlist[i]);
-      }
-      for (let i = this.amountOfTables; i < this.waitlist.length; i++){
-        temp2.push(this.waitlist[i]);
-      }
-
-      this.tables = temp;
-      this.waitlist = temp2;
+      this.tables = this.waitlist.slice(0, this.amountOfTables);
+      this.waitlist = this.waitlist.splice(this.amountOfTables); 
     }
     else {
       this.tables = this.waitlist;
