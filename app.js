@@ -33,6 +33,10 @@ app.get("/api/tables", function(req, res) {
   res.json(tables);
 });
 
+app.post("/api/clear", (req, res) => {
+  tables = [];
+});
+
 app.post("/api/tables", function(req, res) {
 
   let newReservation = req.body;
