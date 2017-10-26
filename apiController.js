@@ -1,7 +1,10 @@
 const amountOfTables = 5;
 
 module.exports = {
-  newReservation: (req) => {
+  tables: [],
+  waitlist: [],
+  amountOfTables: 5,
+  newReservation: function(req){
     let newReservation = req.body;
 
     if (this.tables.length < this.amountOfTables) {
@@ -16,11 +19,8 @@ module.exports = {
 
     console.log(newReservation);
   },
-  clear: () => {
+  clear: function() {
     this.tables = this.waitlist;
     this.waitlist = [];
-  },
-  tables: [],
-  waitlist: [],
-  amountOfTables: 5
+  }
 }
