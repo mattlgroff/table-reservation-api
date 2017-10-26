@@ -1,5 +1,3 @@
-const amountOfTables = 5;
-
 module.exports = {
   tables: [],
   waitlist: [],
