@@ -34,7 +34,8 @@ app.get("/api/tables", function(req, res) {
 });
 
 app.post("/api/clear", (req, res) => {
-  tables = [];
+  tables = waitlist;
+  waitlist = [];
 });
 
 app.post("/api/tables", function(req, res) {
