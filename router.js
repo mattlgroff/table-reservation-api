@@ -33,13 +33,9 @@ app.get("/api/tables", function(req, res) {
   res.json(tables);
 });
 
-app.post("/api/clear", (req, res) => {
-  api.clear();
-});
+app.post("/api/clear", api.clear() );
 
-app.post("/api/tables", function(req, res) {
-  api.newReservation();
-});
+app.post("/api/tables", api.newReservation(req));
 
 app.listen(port, function() {
   console.log("App listening on PORT " + port);
