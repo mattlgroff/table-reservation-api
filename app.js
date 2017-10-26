@@ -1,26 +1,42 @@
-const amountOfTables = 5;
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+const api = require("./apiController.js");
 
-let tables = [];
-let waitlist = [];
+const app = express();
+const port = process.env.PORT || 8080;
 
-module.exports = {
-  newReservation: (req) => {
-    let newReservation = req.body;
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-    if (tables.length < amountOfTables) {
-      tables.push(newReservation);
-      console.log("Added to tables: ");
-      
-    }
-    else {
-      waitlist.push(newReservation);
-      console.log("Added to waitlist: ");
-    }
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
-    console.log(newReservation);
-  },
-  clear: () => {
-    tables = waitlist;
-    waitlist = [];
-  }
-}
+app.get("/tables", (req, res) => {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.get("/reserve", (req, res) => {
+  res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+app.get("/api/waitlist", (req, res) => {
+  res.json(waitlist);
+});
+
+app.get("/api/tables", (req, res) => {
+  res.json(tables);
+});
+
+app.post("/api/clear", (req, res) => {
+  api.clear();
+});
+
+app.post("/api/tables", (req, res) => {
+  api.newReservation(req);
+});
+
+app.listen(port, () => {
+  console.log("App listening on PORT " + port);
+});
