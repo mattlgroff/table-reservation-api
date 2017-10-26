@@ -38,12 +38,13 @@ app.post("/api/tables", function(req, res) {
   let newReservation = req.body;
 
   if (tables.length < amountOfTables) {
-    waitlist.push(newReservation);
-    console.log("Added to waitlist: ");
-  }
-  else {
     tables.push(newReservation);
     console.log("Added to tables: ");
+    
+  }
+  else {
+    waitlist.push(newReservation);
+    console.log("Added to waitlist: ");
   }
 
   console.log(newReservation);
