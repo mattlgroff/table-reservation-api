@@ -21,11 +21,11 @@ module.exports = {
     let temp = [];
     let temp2 = [];
 
-    if (this.waitlist > this.amountOfTables){
-      for (let i =0; i < this.amountOfTables; i++){
+    if (this.waitlist.length > this.amountOfTables.length){
+      for (let i =0; i < this.amountOfTables.length; i++){
         temp.push(this.waitlist[i]);
       }
-      for (let i = this.amountOfTables; i < this.waitlist.length; i++){
+      for (let i = this.amountOfTables.length; i < this.waitlist.length; i++){
         temp2.push(this.waitlist[i]);
       }
 
