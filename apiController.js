@@ -17,8 +17,8 @@ module.exports = {
     console.log(newReservation);
   },
   clear: () => {
-    tables = waitlist;
-    waitlist = [];
+    this.tables = this.waitlist;
+    this.waitlist = [];
   },
   tables: [],
   waitlist: [],
